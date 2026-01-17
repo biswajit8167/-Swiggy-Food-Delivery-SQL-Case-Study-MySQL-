@@ -1,11 +1,12 @@
 # -Swiggy-Food-Delivery-SQL-Case-Study-MySQL-
-![Dashboard Screenshot](dashboard.png)
-SQL DATA ANALYSIS PORTFOLIO PROJECT
-📌 Project Overview
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/15b9cfe0d760ae8f2b4524b666b909bd333de569/ChatGPT%20Image%20Jan%2017%2C%202026%2C%2011_18_43%20PM.png)
+## SQL DATA ANALYSIS PORTFOLIO PROJECT
+
+# 📌 Project Overview
 
 This project is an end-to-end SQL case study for a Swiggy-like food delivery platform using MySQL. The goal is to solve real-world business problems related to customers, orders, deliveries, riders, and restaurants by writing optimized SQL queries and building a relational data model.
 
-This project is designed for:
+# This project is designed for:
 
 Data Analyst portfolio (SQL-focused)
 
