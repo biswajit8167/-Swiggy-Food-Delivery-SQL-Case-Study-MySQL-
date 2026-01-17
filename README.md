@@ -1,4 +1,5 @@
 # -Swiggy-Food-Delivery-SQL-Case-Study-MySQL-
+![Dashboard Screenshot](dashboard.png)
 SQL DATA ANALYSIS PORTFOLIO PROJECT
 📌 Project Overview
 
