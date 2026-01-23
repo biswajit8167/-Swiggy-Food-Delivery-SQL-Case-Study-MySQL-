@@ -98,7 +98,7 @@ SELECT
     SUM(CASE WHEN rating IS NULL THEN 1 ELSE 0 END) AS rating_nulls
 FROM orders;
 ```
-![image]
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/7ca5c4a24501a9d858b0df93c61f39301ea22f9c/screenshot/Screenshot%20(159).png)
 ### 2️⃣ Core Business KPIs
 
 * Total orders & revenue
