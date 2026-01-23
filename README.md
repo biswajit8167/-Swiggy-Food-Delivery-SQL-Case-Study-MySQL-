@@ -66,6 +66,15 @@ SELECT 'deliveries' AS table_name, COUNT(*) AS total_records FROM deliveries;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/90d53e0858ac55636e7bf978827639ef4fd86a98/screenshot/Screenshot%20(157).png)
 
+***2.What is the date range of orders in the dataset?***
+```sql
+SELECT 
+    MIN(order_date) AS first_order_date,
+    MAX(order_date) AS last_order_date,
+    DATEDIFF(DAY, MIN(order_date), MAX(order_date)) AS total_days_covered
+FROM orders;
+```
+![image]
 ### 2️⃣ Core Business KPIs
 
 * Total orders & revenue
