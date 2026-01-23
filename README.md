@@ -101,6 +101,16 @@ SELECT
 FROM orders;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/7ca5c4a24501a9d858b0df93c61f39301ea22f9c/screenshot/Screenshot%20(159).png)
+
+```sql
+SELECT 
+    SUM(CASE WHEN customer_id IS NULL THEN 1 ELSE 0 END) AS customer_id_nulls,
+    SUM(CASE WHEN customer_name IS NULL THEN 1 ELSE 0 END) AS customer_name_nulls,
+    SUM(CASE WHEN age IS NULL THEN 1 ELSE 0 END) AS age_nulls,
+    SUM(CASE WHEN gender IS NULL THEN 1 ELSE 0 END) AS gender_nulls,
+    SUM(CASE WHEN registration_date IS NULL THEN 1 ELSE 0 END) AS registration_nulls
+FROM customers;
+```
 ### 2️⃣ Core Business KPIs
 
 * Total orders & revenue
