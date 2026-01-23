@@ -322,11 +322,20 @@ GROUP BY r.restaurant_id, r.restaurant_name
 ORDER BY total_revenue DESC;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/b55e6575287455c550fc087664c2b0abb6c22259/screenshot/Screenshot%20(174).png)
-* Top & bottom restaurants by revenue
-* Cancellation rate by restaurant
-* Revenue contribution (Pareto analysis)
-* Order trends by restaurant
-
+***17.Which restaurants have the highest number of cancelled orders?**
+```sql
+SELECT TOP 10
+    r.restaurant_id,
+    r.restaurant_name,
+    COUNT(o.order_id) AS cancelled_orders
+FROM orders o
+JOIN restaurants r
+    ON o.restaurant_id = r.restaurant_id
+WHERE o.order_status = 'Cancelled'
+GROUP BY r.restaurant_id, r.restaurant_name
+ORDER BY cancelled_orders DESC;
+```
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/ef2513440fa81809fc52446001434604f1e9345d/screenshot/Screenshot%20(175).png)
 ### 4️⃣ Delivery & Rider Performance
 
 * Average delivery time
