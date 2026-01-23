@@ -138,6 +138,17 @@ SELECT
 FROM deliveries;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/884075eaa694550eae069eb862a8a3a53ca5b294/screenshot/Screenshot%20(162).png)
+
+***5.	How many orders are in each status (Completed, Cancelled, Pending)?***
+```sql
+SELECT 
+    order_status,
+    COUNT(*) AS total_orders
+FROM orders
+GROUP BY order_status
+ORDER BY total_orders DESC;
+```
+
 ### 2️⃣ Core Business KPIs
 
 * Total orders & revenue
