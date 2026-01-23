@@ -415,6 +415,7 @@ SELECT
     ) AS top_20_percent_revenue_share
 FROM ranked_restaurants;
 ```
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/ec14d0d5a10c5c0dfe8503a12db0b60a94c2ce74/screenshot/Screenshot%20(179).png)
 
 
 
