@@ -676,7 +676,7 @@ SELECT
 FROM daily_revenue
 ORDER BY order_date;
 ```
-![image]()
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/b91f22e9e46d45105af4c124da7811d3820e4c74/screenshot/Screenshot%20(190).png)
 
 
 ## 📊 Power BI Dashboards
