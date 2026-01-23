@@ -208,6 +208,17 @@ ORDER BY order_month;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/a1dba8fdf66a1adfe8c0c27cede752aa5ef3b43a/screenshot/Screenshot%20(168).png)
 
+### 👤 Customers
+
+***11.How many unique customers placed orders?***
+```sql
+SELECT 
+    COUNT(DISTINCT customer_id) AS unique_customers
+FROM orders
+WHERE order_status = 'Completed';
+```
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/7609b6524eefd30d594929845ff60c4a1f5dde73/screenshot/Screenshot%20(169).png)
+
 ### 3️⃣ Restaurant Performance Analysis
 
 * Top & bottom restaurants by revenue
