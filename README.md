@@ -148,6 +148,8 @@ FROM orders
 GROUP BY order_status
 ORDER BY total_orders DESC;
 ```
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/fd7f3b1122c2bf08fed32d5ccaf8b215847b5aed/screenshot/Screenshot%20(163).png)
+
 
 ### 2️⃣ Core Business KPIs
 
