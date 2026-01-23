@@ -577,6 +577,30 @@ ORDER BY total_orders DESC;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/82d274e7fee976a19fad51552ea06bbbc1020cd5/screenshot/Screenshot%20(186).png)
 
+***29.Which customers haven’t ordered in the last 60 days (churned customers)?***
+```sql
+WITH last_order AS (
+    SELECT 
+        customer_id,
+        MAX(order_date) AS last_order_date
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT 
+    c.customer_id,
+    c.customer_name,
+    lo.last_order_date,
+    DATEDIFF(DAY, lo.last_order_date, GETDATE()) AS days_since_last_order
+FROM customers c
+LEFT JOIN last_order lo
+    ON c.customer_id = lo.customer_id
+WHERE lo.last_order_date < DATEADD(DAY, -60, GETDATE())
+ORDER BY days_since_last_order DESC;
+```
+
+
+
+
 ### 6️⃣ Advanced Analytics (Resume-Strong)
 
 * Window functions (RANK, DENSE_RANK)
