@@ -52,11 +52,19 @@ The project uses **5 relational datasets**:
 ## 🔍 Analysis Performed (SQL – 40 Business Queries)
 
 ### 1️⃣ Data Understanding & Quality Checks
+**1.How many total records are there in each table (orders, customers, restaurants, riders, deliveries)?**
 
-* Record counts for all tables
-* Date range validation
-* Duplicate and NULL checks
-* Order status distribution
+'''sql
+SELECT 'orders' AS table_name, COUNT(*) AS total_records FROM orders
+UNION ALL
+SELECT 'customers' AS table_name, COUNT(*) AS total_records FROM customers
+UNION ALL
+SELECT 'restaurants' AS table_name, COUNT(*) AS total_records FROM restaurants
+UNION ALL
+SELECT 'riders' AS table_name, COUNT(*) AS total_records FROM riders
+UNION ALL
+SELECT 'deliveries' AS table_name, COUNT(*) AS total_records FROM deliveries;
+'''
 
 ### 2️⃣ Core Business KPIs
 
