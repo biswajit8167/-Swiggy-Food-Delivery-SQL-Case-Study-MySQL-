@@ -307,7 +307,20 @@ ORDER BY acquisition_month;
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/587d5d9ee8ef316fee3f64ea2cfbaac7b3c90160/screenshot/Screenshot%20(173).png)
 
 ### 3️⃣ Restaurant Performance Analysis
-
+***16.Which are the top 10 restaurants by revenue?
+```sql
+SELECT TOP 10
+    r.restaurant_id,
+    r.restaurant_name,
+    SUM(o.total_amount) AS total_revenue,
+    COUNT(o.order_id) AS total_orders
+FROM orders o
+JOIN restaurants r
+    ON o.restaurant_id = r.restaurant_id
+WHERE o.order_status = 'Completed'
+GROUP BY r.restaurant_id, r.restaurant_name
+ORDER BY total_revenue DESC;
+```
 * Top & bottom restaurants by revenue
 * Cancellation rate by restaurant
 * Revenue contribution (Pareto analysis)
