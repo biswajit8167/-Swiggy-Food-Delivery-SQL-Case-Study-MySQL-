@@ -126,6 +126,17 @@ SELECT
 FROM restaurants;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/c8c51fc4bedd91d603e3965372a23448b14feb0d/screenshot/Screenshot%20(161).png)
+
+***For Deliveries***
+```sql
+SELECT 
+    SUM(CASE WHEN delivery_id IS NULL THEN 1 ELSE 0 END) AS delivery_id_nulls,
+    SUM(CASE WHEN order_id IS NULL THEN 1 ELSE 0 END) AS order_id_nulls,
+    SUM(CASE WHEN delivery_status IS NULL THEN 1 ELSE 0 END) AS delivery_nulls,
+    SUM(CASE WHEN delivery_time IS NULL THEN 1 ELSE 0 END) AS deliver_time_nulls,
+    SUM(CASE WHEN rider_id IS NULL THEN 1 ELSE 0 END) AS rider_id_nulls
+FROM deliveries;
+```
 ### 2️⃣ Core Business KPIs
 
 * Total orders & revenue
