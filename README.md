@@ -42,7 +42,7 @@ The project uses **5 relational datasets**:
 
 ## 🛠️ Tools & Technologies Used
 
-* **SQL (MySQL / PostgreSQL)** – Data extraction, joins, CTEs, window functions
+* **SQL (Microsoft SQL server)** – Data extraction, joins, CTEs, window functions
 * **Power BI** – Interactive dashboards & business reporting
 * **Excel** – Data validation and exploration
 * **GitHub** – Project versioning and portfolio showcase
