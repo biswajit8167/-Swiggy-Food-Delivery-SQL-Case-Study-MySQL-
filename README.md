@@ -76,7 +76,7 @@ FROM orders;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/8262a80626536d1dc79b5bdc6b6ac7c749ee1d35/screenshot/Screenshot%20(158).png)
 
-***3.3.	Are there any duplicate order IDs in the orders table?***
+***3.	Are there any duplicate order IDs in the orders table?***
 ```sql
 SELECT 
     order_id,
@@ -86,6 +86,19 @@ GROUP BY order_id
 HAVING COUNT(*) > 1;
 ```
 ***There are no duplicates value in order table***
+***4.Which columns contain NULL values and how many?***
+```sql
+SELECT 
+    SUM(CASE WHEN order_id IS NULL THEN 1 ELSE 0 END) AS order_id_nulls,
+    SUM(CASE WHEN customer_id IS NULL THEN 1 ELSE 0 END) AS customer_id_nulls,
+    SUM(CASE WHEN restaurant_id IS NULL THEN 1 ELSE 0 END) AS restaurant_id_nulls,
+    SUM(CASE WHEN order_date IS NULL THEN 1 ELSE 0 END) AS order_date_nulls,
+    SUM(CASE WHEN order_status IS NULL THEN 1 ELSE 0 END) AS order_status_nulls,
+    SUM(CASE WHEN total_amount IS NULL THEN 1 ELSE 0 END) AS total_amount_nulls,
+    SUM(CASE WHEN rating IS NULL THEN 1 ELSE 0 END) AS rating_nulls
+FROM orders;
+```
+![image]
 ### 2️⃣ Core Business KPIs
 
 * Total orders & revenue
