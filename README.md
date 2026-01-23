@@ -229,6 +229,22 @@ WHERE order_status = 'Completed';
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/11f13353a91c71d18d43c2dbdd1f9cbed6d19f42/screenshot/Screenshot%20(170).png)
 
+***13.Who are the top 10 customers by total spend?***
+```sql
+SELECT TOP 10
+    o.customer_id,
+    c.customer_name,
+    SUM(o.total_amount) AS total_spend,
+    COUNT(o.order_id) AS total_orders
+FROM orders o
+JOIN customers c 
+    ON o.customer_id = c.customer_id
+WHERE o.order_status = 'Completed'
+GROUP BY o.customer_id, c.customer_name
+ORDER BY total_spend DESC;
+```
+![image]()
+
 ### 3️⃣ Restaurant Performance Analysis
 
 * Top & bottom restaurants by revenue
