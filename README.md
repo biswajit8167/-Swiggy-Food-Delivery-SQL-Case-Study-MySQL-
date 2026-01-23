@@ -389,6 +389,37 @@ ORDER BY total_orders DESC;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/1583110d37c5f0a55862b94d7685723afa2f930e/screenshot/Screenshot%20(178).png)
 
+***21.What percentage of total revenue comes from top 20% restaurants?***
+```sql
+WITH restaurant_revenue AS (
+    SELECT 
+        r.restaurant_id,
+        r.restaurant_name,
+        SUM(o.total_amount) AS total_revenue
+    FROM orders o
+    JOIN restaurants r
+        ON o.restaurant_id = r.restaurant_id
+    WHERE o.order_status = 'Completed'
+    GROUP BY r.restaurant_id, r.restaurant_name
+),
+ranked_restaurants AS (
+    SELECT *,
+           NTILE(5) OVER (ORDER BY total_revenue DESC) AS revenue_bucket
+    FROM restaurant_revenue
+)
+SELECT 
+    CAST(
+        100.0 * SUM(CASE WHEN revenue_bucket = 1 THEN total_revenue END)
+        / SUM(total_revenue)
+        AS DECIMAL(5,2)
+    ) AS top_20_percent_revenue_share
+FROM ranked_restaurants;
+```
+
+
+
+
+
 ### 4️⃣ Delivery & Rider Performance
 
 * Average delivery time
