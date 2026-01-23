@@ -656,6 +656,29 @@ ORDER BY city, revenue_rank_in_city;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/6bf5a4de4d7728b1750b4d2bd1f5a3b7b3dacdc0/screenshot/Screenshot%20(189).png)
 
+***33.Calculate cumulative revenue over time (running total).***
+```sql
+WITH daily_revenue AS (
+    SELECT 
+        order_date,
+        SUM(total_amount) AS daily_revenue
+    FROM orders
+    WHERE order_status = 'Completed'
+    GROUP BY order_date
+)
+SELECT 
+    order_date,
+    daily_revenue,
+    SUM(daily_revenue) OVER (
+        ORDER BY order_date
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS cumulative_revenue
+FROM daily_revenue
+ORDER BY order_date;
+```
+![image]()
+
+
 ## 📊 Power BI Dashboards
 
 ### 📈 Dashboard 1: Executive Overview
