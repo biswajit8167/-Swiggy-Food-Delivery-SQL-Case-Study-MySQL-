@@ -75,6 +75,17 @@ SELECT
 FROM orders;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/8262a80626536d1dc79b5bdc6b6ac7c749ee1d35/screenshot/Screenshot%20(158).png)
+
+***3.3.	Are there any duplicate order IDs in the orders table?***
+```sql
+SELECT 
+    order_id,
+    COUNT(*) AS duplicate_count
+FROM orders
+GROUP BY order_id
+HAVING COUNT(*) > 1;
+```
+*** There are no duplicates value in oredr table***
 ### 2️⃣ Core Business KPIs
 
 * Total orders & revenue
