@@ -597,6 +597,7 @@ LEFT JOIN last_order lo
 WHERE lo.last_order_date < DATEADD(DAY, -60, GETDATE())
 ORDER BY days_since_last_order DESC;
 ```
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/ba4166f10f76ea10bda000bf5bb0deced4cb328b/screenshot/Screenshot%20(187).png)
 
 
 
