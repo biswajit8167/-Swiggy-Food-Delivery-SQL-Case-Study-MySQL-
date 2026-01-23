@@ -177,7 +177,7 @@ SELECT
 FROM orders
 WHERE order_status = 'Completed';
 ```
-![image]()
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/820d419156f68e2e335fc7c4c623c6b3b42c8db5/screenshot/Screenshot%20(166).png)
 
 ### 3️⃣ Restaurant Performance Analysis
 
