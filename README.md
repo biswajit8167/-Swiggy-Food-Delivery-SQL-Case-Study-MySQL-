@@ -137,6 +137,7 @@ SELECT
     SUM(CASE WHEN rider_id IS NULL THEN 1 ELSE 0 END) AS rider_id_nulls
 FROM deliveries;
 ```
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/884075eaa694550eae069eb862a8a3a53ca5b294/screenshot/Screenshot%20(162).png)
 ### 2️⃣ Core Business KPIs
 
 * Total orders & revenue
