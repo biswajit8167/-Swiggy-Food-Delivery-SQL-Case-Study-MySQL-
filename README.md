@@ -269,6 +269,26 @@ LEFT JOIN customer_completed_orders o
 
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/bbf227149bbd8744d38da5594ae898c4f78b3d1f/screenshot/Screenshot%20(172).png)
 
+***15.How many new customers were acquired each month?***
+```sql
+WITH first_order AS (
+    SELECT 
+        customer_id,
+        MIN(order_date) AS first_order_date
+    FROM orders
+    WHERE order_status = 'Completed'
+    GROUP BY customer_id
+)
+SELECT 
+    FORMAT(first_order_date, 'yyyy-MM') AS acquisition_month,
+    COUNT(customer_id) AS new_customers
+FROM first_order
+GROUP BY FORMAT(first_order_date, 'yyyy-MM')
+ORDER BY acquisition_month;
+```
+
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/587d5d9ee8ef316fee3f64ea2cfbaac7b3c90160/screenshot/Screenshot%20(173).png)
+
 ### 3️⃣ Restaurant Performance Analysis
 
 * Top & bottom restaurants by revenue
