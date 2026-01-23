@@ -517,7 +517,7 @@ JOIN riders r
 GROUP BY r.rider_id, r.rider_name
 ORDER BY avg_orders_per_day DESC;
 ```
-![image]()
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/f7bbf38815bc23c69ddcca6ee92ab8b0a7d65545/screenshot/Screenshot%20(184).png)
 
 
 ### 5️⃣ Customer Behavior & Retention
