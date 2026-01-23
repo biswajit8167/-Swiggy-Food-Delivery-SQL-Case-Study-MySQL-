@@ -626,14 +626,35 @@ GROUP BY
 
 
 
-### 6️⃣ Advanced Analytics (Resume-Strong)
+### 6️⃣ Advanced Analytics 
 
-* Window functions (RANK, DENSE_RANK)
-* Running revenue totals
-* Cohort retention analysis
-* Pareto (80/20) customer analysis
-
----
+***32.Rank restaurants by revenue within each city (window function).***
+```sql
+WITH restaurant_revenue AS (
+    SELECT 
+        r.city,
+        r.restaurant_id,
+        r.restaurant_name,
+        SUM(o.total_amount) AS total_revenue
+    FROM orders o
+    JOIN restaurants r
+        ON o.restaurant_id = r.restaurant_id
+    WHERE o.order_status = 'Completed'
+    GROUP BY r.city, r.restaurant_id, r.restaurant_name
+)
+SELECT 
+    city,
+    restaurant_id,
+    restaurant_name,
+    total_revenue,
+    RANK() OVER (
+        PARTITION BY city 
+        ORDER BY total_revenue DESC
+    ) AS revenue_rank_in_city
+FROM restaurant_revenue
+ORDER BY city, revenue_rank_in_city;
+```
+![image]()
 
 ## 📊 Power BI Dashboards
 
