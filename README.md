@@ -599,6 +599,30 @@ ORDER BY days_since_last_order DESC;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/ba4166f10f76ea10bda000bf5bb0deced4cb328b/screenshot/Screenshot%20(187).png)
 
+***31.How does revenue differ between weekdays and weekends?***
+```sql
+SELECT 
+    CASE 
+        WHEN DATENAME(WEEKDAY, order_date) IN ('Saturday', 'Sunday') 
+            THEN 'Weekend'
+        ELSE 'Weekday'
+    END AS day_type,
+    SUM(total_amount) AS total_revenue,
+    COUNT(order_id) AS total_orders,
+    ROUND(AVG(total_amount), 2) AS avg_order_value
+FROM orders
+WHERE order_status = 'Completed'
+GROUP BY 
+    CASE 
+        WHEN DATENAME(WEEKDAY, order_date) IN ('Saturday', 'Sunday') 
+            THEN 'Weekend'
+        ELSE 'Weekday'
+    END;
+```
+![image]()
+
+
+
 
 
 
