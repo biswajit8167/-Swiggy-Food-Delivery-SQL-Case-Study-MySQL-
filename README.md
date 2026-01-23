@@ -173,7 +173,7 @@ WHERE order_status = 'Completed';
 ***8.	What is the average order value (AOV)?---
 ```sql
 SELECT 
-    ROUND(AVG(order_amount), 2) AS average_order_value
+    ROUND(AVG(total_amount), 2) AS average_order_value
 FROM orders
 WHERE order_status = 'Completed';
 ```
