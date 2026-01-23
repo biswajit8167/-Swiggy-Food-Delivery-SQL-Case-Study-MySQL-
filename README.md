@@ -159,7 +159,16 @@ SELECT
 FROM orders
 WHERE order_status = 'Completed';
 ```
-![image]
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/ef3bcfdb487e7b5c504a319ac949b00d0a2cce29/screenshot/Screenshot%20(164).png)
+
+***7.	What is the total revenue generated?***
+```sql
+SELECT 
+    SUM(total_amount) AS total_revenue
+FROM orders
+WHERE order_status = 'Completed';
+```
+![image]()
 
 ### 3️⃣ Restaurant Performance Analysis
 
