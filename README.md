@@ -1,4 +1,4 @@
-# -Swiggy-Food-Delivery-SQL-Case-Study-MySQL-
+# -Swiggy-Food-Delivery-SQL-Case-Study-MySQL-Power BI
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/15b9cfe0d760ae8f2b4524b666b909bd333de569/ChatGPT%20Image%20Jan%2017%2C%202026%2C%2011_18_43%20PM.png)
 # 🍔 Food Delivery Data Analysis Project (SQL + Power BI)
 
