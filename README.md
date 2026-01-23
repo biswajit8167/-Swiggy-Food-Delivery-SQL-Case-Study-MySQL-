@@ -64,7 +64,7 @@ SELECT 'riders' AS table_name, COUNT(*) AS total_records FROM riders
 UNION ALL
 SELECT 'deliveries' AS table_name, COUNT(*) AS total_records FROM deliveries;
 ```
-![image]
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/90d53e0858ac55636e7bf978827639ef4fd86a98/screenshot/Screenshot%20(157).png)
 
 ### 2️⃣ Core Business KPIs
 
