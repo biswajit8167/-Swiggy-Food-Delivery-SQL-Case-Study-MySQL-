@@ -245,6 +245,30 @@ ORDER BY total_spend DESC;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/8685c8c97b24dc04b459f8f00c4e700e10bc9b0c/screenshot/Screenshot%20(171).png)
 
+***14.What percentage of customers are repeat customers?***
+```sql
+WITH customer_completed_orders AS (
+    SELECT 
+        customer_id,
+        COUNT(order_id) AS completed_orders
+    FROM orders
+    WHERE order_status = 'Completed'
+    GROUP BY customer_id
+)
+SELECT 
+    COUNT(CASE WHEN completed_orders > 1 THEN 1 END) AS repeat_customers_count,
+    CAST(
+        100.0 * COUNT(CASE WHEN completed_orders > 1 THEN 1 END)
+        / COUNT(c.customer_id)
+        AS DECIMAL(5,2)
+    ) AS repeat_customers_percentage
+FROM customers c
+LEFT JOIN customer_completed_orders o
+    ON c.customer_id = o.customer_id;
+```
+
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/bbf227149bbd8744d38da5594ae898c4f78b3d1f/screenshot/Screenshot%20(172).png)
+
 ### 3️⃣ Restaurant Performance Analysis
 
 * Top & bottom restaurants by revenue
