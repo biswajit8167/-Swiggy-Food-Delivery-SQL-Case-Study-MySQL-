@@ -190,6 +190,8 @@ WHERE order_status = 'Completed'
 GROUP BY CAST(order_date AS DATE)
 ORDER BY daily_revenue desc;
 ```
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/84ae02fefa93089ab0f2f5239c6aead3444c1cb9/screenshot/Screenshot%20(167).png)
+
 ### 3️⃣ Restaurant Performance Analysis
 
 * Top & bottom restaurants by revenue
