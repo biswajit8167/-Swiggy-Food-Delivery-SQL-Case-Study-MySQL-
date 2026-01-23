@@ -74,7 +74,7 @@ SELECT
     DATEDIFF(DAY, MIN(order_date), MAX(order_date)) AS total_days_covered
 FROM orders;
 ```
-![image]
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/8262a80626536d1dc79b5bdc6b6ac7c749ee1d35/screenshot/Screenshot%20(158).png)
 ### 2️⃣ Core Business KPIs
 
 * Total orders & revenue
