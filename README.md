@@ -219,6 +219,16 @@ WHERE order_status = 'Completed';
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/7609b6524eefd30d594929845ff60c4a1f5dde73/screenshot/Screenshot%20(169).png)
 
+***12.What is the average number of orders per customer?***
+```sql
+SELECT 
+    CAST(COUNT(*) * 1.0 / COUNT(DISTINCT customer_id) AS DECIMAL(10,2)) 
+    AS avg_orders_per_customer
+FROM orders
+WHERE order_status = 'Completed';
+```
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/11f13353a91c71d18d43c2dbdd1f9cbed6d19f42/screenshot/Screenshot%20(170).png)
+
 ### 3️⃣ Restaurant Performance Analysis
 
 * Top & bottom restaurants by revenue
