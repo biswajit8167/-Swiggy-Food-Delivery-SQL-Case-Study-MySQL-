@@ -354,6 +354,26 @@ ORDER BY avg_order_value DESC;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/9b3554d7be9ad9e8f7e4ea2259fade79ad59081e/screenshot/Screenshot%20(176).png)
 
+***19.Which restaurants generate the highest revenue per order?***
+```sql
+SELECT 
+    r.restaurant_id,
+    r.restaurant_name,
+    ROUND(
+        SUM(o.total_amount) * 1.0 / COUNT(o.order_id),
+        2
+    ) AS revenue_per_order,
+    COUNT(o.order_id) AS total_orders
+FROM orders o
+JOIN restaurants r
+    ON o.restaurant_id = r.restaurant_id
+WHERE o.order_status = 'Completed'
+GROUP BY r.restaurant_id, r.restaurant_name
+HAVING COUNT(o.order_id) >= 30   -- removes noise
+ORDER BY revenue_per_order DESC;
+```
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/1f5632461ad63a35e4798d843a87df141fc78eba/screenshot/Screenshot%20(177).png)
+
 ### 4️⃣ Delivery & Rider Performance
 
 * Average delivery time
