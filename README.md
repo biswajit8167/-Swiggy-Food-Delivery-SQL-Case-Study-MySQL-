@@ -479,7 +479,7 @@ FROM delivery_times;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/b587dc32e85729f3a2be3513354406ec40fc0c0c/screenshot/Screenshot%20(182).png)
 
-***26.Which riders complete the most deliveries?***
+***25.Which riders complete the most deliveries?***
 ```sql
 SELECT 
     r.rider_id,
@@ -494,7 +494,7 @@ ORDER BY total_deliveries DESC;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/5148919d4dc4bc6eb357ae0a8b55530f1264b82e/screenshot/Screenshot%20(183).png)
 
-***27.What is the average number of orders handled per rider per day?***
+***26.What is the average number of orders handled per rider per day?***
 ```sql
 WITH daily_rider_orders AS (
     SELECT 
@@ -519,6 +519,39 @@ ORDER BY avg_orders_per_day DESC;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/f7bbf38815bc23c69ddcca6ee92ab8b0a7d65545/screenshot/Screenshot%20(184).png)
 
+***27.Which riders have the highest late delivery rate?***
+```sql
+WITH rider_delivery_times AS (
+    SELECT 
+        d.rider_id,
+        DATEDIFF(MINUTE, o.order_time, d.delivery_time) AS delivery_minutes
+    FROM deliveries d
+    JOIN orders o
+        ON d.order_id = o.order_id
+    WHERE d.delivery_status = 'Delivered'
+      AND d.delivery_time > o.order_time
+),
+rider_late_stats AS (
+    SELECT
+        rider_id,
+        COUNT(*) AS total_deliveries,
+        COUNT(CASE WHEN delivery_minutes > 45 THEN 1 END) AS late_deliveries
+    FROM rider_delivery_times
+    GROUP BY rider_id
+)
+SELECT 
+    r.rider_id,
+    r.rider_name,
+    late_deliveries,
+    total_deliveries,
+    ROUND(late_deliveries * 100.0 / total_deliveries, 2) AS late_delivery_rate_pct
+FROM rider_late_stats rls
+JOIN riders r
+    ON rls.rider_id = r.rider_id
+WHERE total_deliveries >= 10   -- avoid noise
+ORDER BY late_delivery_rate_pct DESC;
+```
+![image]()
 
 ### 5️⃣ Customer Behavior & Retention
 
