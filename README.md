@@ -460,7 +460,7 @@ WHERE d.delivery_status = 'Delivered'
 ```  
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/54e8c4e5c13b056c091aff948b7b1ca6e6fd5612/screenshot/Screenshot%20(181).png)
 
-***25.What percentage of orders are delivered late (e.g., >45 mins)?***
+***24.What percentage of orders are delivered late (e.g., >45 mins)?***
 ```sql
 WITH delivery_times AS (
     SELECT 
@@ -477,7 +477,7 @@ SELECT
         AS late_delivery_percentage
 FROM delivery_times;
 ```
-![image]()
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/b587dc32e85729f3a2be3513354406ec40fc0c0c/screenshot/Screenshot%20(182).png)
 
 ### 5️⃣ Customer Behavior & Retention
 
