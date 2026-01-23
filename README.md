@@ -575,7 +575,7 @@ GROUP BY
     END
 ORDER BY total_orders DESC;
 ```
-![image]()
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/82d274e7fee976a19fad51552ea06bbbc1020cd5/screenshot/Screenshot%20(186).png)
 
 ### 6️⃣ Advanced Analytics (Resume-Strong)
 
