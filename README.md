@@ -619,7 +619,7 @@ GROUP BY
         ELSE 'Weekday'
     END;
 ```
-![image]()
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/274c272659d0d4d17c6b8710e41102991452d1d0/screenshot/Screenshot%20(188).png)
 
 
 
