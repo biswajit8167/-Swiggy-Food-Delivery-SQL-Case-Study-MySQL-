@@ -479,6 +479,21 @@ FROM delivery_times;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/b587dc32e85729f3a2be3513354406ec40fc0c0c/screenshot/Screenshot%20(182).png)
 
+***26.Which riders complete the most deliveries?***
+```sql
+SELECT 
+    r.rider_id,
+    r.rider_name,
+    COUNT(d.delivery_id) AS total_deliveries
+FROM deliveries d
+JOIN riders r
+    ON d.rider_id = r.rider_id
+WHERE d.delivery_status = 'Delivered'
+GROUP BY r.rider_id, r.rider_name
+ORDER BY total_deliveries DESC;
+```
+![image]()
+
 ### 5️⃣ Customer Behavior & Retention
 
 * Peak ordering hours
