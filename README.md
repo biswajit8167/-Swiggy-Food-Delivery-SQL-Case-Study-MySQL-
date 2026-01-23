@@ -111,6 +111,7 @@ SELECT
     SUM(CASE WHEN registration_date IS NULL THEN 1 ELSE 0 END) AS registration_nulls
 FROM customers;
 ```
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/03c3eb1b666e627748ab9f8a86c77206570ee7cf/screenshot/Screenshot%20(160).png)
 ### 2️⃣ Core Business KPIs
 
 * Total orders & revenue
