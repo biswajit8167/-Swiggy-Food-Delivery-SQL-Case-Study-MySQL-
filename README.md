@@ -337,6 +337,23 @@ GROUP BY r.restaurant_id, r.restaurant_name
 ORDER BY cancelled_orders DESC;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/ef2513440fa81809fc52446001434604f1e9345d/screenshot/Screenshot%20(175).png)
+
+***18.What is the average order value by restaurant?***
+```sql
+SELECT 
+    r.restaurant_id,
+    r.restaurant_name,
+    ROUND(AVG(o.total_amount), 2) AS avg_order_value,
+    COUNT(o.order_id) AS total_orders
+FROM orders o
+JOIN restaurants r
+    ON o.restaurant_id = r.restaurant_id
+WHERE o.order_status = 'Completed'
+GROUP BY r.restaurant_id, r.restaurant_name
+ORDER BY avg_order_value DESC;
+```
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/9b3554d7be9ad9e8f7e4ea2259fade79ad59081e/screenshot/Screenshot%20(176).png)
+
 ### 4️⃣ Delivery & Rider Performance
 
 * Average delivery time
