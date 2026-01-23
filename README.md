@@ -203,7 +203,8 @@ WHERE order_status = 'Completed'
 GROUP BY FORMAT(order_date, 'yyyy-MM')
 ORDER BY order_month;
 ```
-![image]()
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/a1dba8fdf66a1adfe8c0c27cede752aa5ef3b43a/screenshot/Screenshot%20(168).png)
+
 ### 3️⃣ Restaurant Performance Analysis
 
 * Top & bottom restaurants by revenue
