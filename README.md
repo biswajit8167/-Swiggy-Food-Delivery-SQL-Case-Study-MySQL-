@@ -323,7 +323,7 @@ ORDER BY total_revenue DESC;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/b55e6575287455c550fc087664c2b0abb6c22259/screenshot/Screenshot%20(174).png)
 
-***17.Which restaurants have the highest number of cancelled orders?**
+**17.Which restaurants have the highest number of cancelled orders?**
 ```sql
 SELECT TOP 10
     r.restaurant_id,
