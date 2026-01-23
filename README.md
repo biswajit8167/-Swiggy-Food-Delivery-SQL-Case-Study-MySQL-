@@ -417,6 +417,27 @@ FROM ranked_restaurants;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/ec14d0d5a10c5c0dfe8503a12db0b60a94c2ce74/screenshot/Screenshot%20(179).png)
 
+***22.What is the average delivery time per restaurant?***
+```sql
+SELECT 
+    r.restaurant_id,
+    r.restaurant_name,
+    ROUND(
+        AVG(DATEDIFF(MINUTE, o.order_time, d.delivery_time)),
+        2
+    ) AS avg_delivery_time_minutes,
+    COUNT(d.order_id) AS total_deliveries
+FROM deliveries d
+JOIN orders o
+    ON d.order_id = o.order_id
+JOIN restaurants r
+    ON o.restaurant_id = r.restaurant_id
+WHERE d.delivery_status = 'Delivered'
+GROUP BY r.restaurant_id, r.restaurant_name
+ORDER BY avg_delivery_time_minutes;
+```
+
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/631571e755ca3f9d6aed3eee71f46c2dc7dc611f/screenshot/Screenshot%20(180).png)
 
 
 
