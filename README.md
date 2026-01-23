@@ -555,10 +555,27 @@ ORDER BY late_delivery_rate_pct DESC;
 
 ### 5️⃣ Customer Behavior & Retention
 
-* Peak ordering hours
-* Weekend vs weekday revenue
-* Customer churn identification
-* Customer segmentation (High/Medium/Low value)
+***28.What are the peak ordering hours of the day?***
+```sql
+SELECT 
+    CASE 
+        WHEN DATEPART(HOUR, order_time) BETWEEN 6 AND 11 THEN 'Morning'
+        WHEN DATEPART(HOUR, order_time) BETWEEN 12 AND 16 THEN 'Afternoon'
+        WHEN DATEPART(HOUR, order_time) BETWEEN 17 AND 21 THEN 'Evening'
+        ELSE 'Night'
+    END AS time_slot,
+    COUNT(order_id) AS total_orders
+FROM orders
+GROUP BY 
+    CASE 
+        WHEN DATEPART(HOUR, order_time) BETWEEN 6 AND 11 THEN 'Morning'
+        WHEN DATEPART(HOUR, order_time) BETWEEN 12 AND 16 THEN 'Afternoon'
+        WHEN DATEPART(HOUR, order_time) BETWEEN 17 AND 21 THEN 'Evening'
+        ELSE 'Night'
+    END
+ORDER BY total_orders DESC;
+```
+![image]()
 
 ### 6️⃣ Advanced Analytics (Resume-Strong)
 
