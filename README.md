@@ -170,7 +170,7 @@ WHERE order_status = 'Completed';
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/6e1479c5a016988d4458bc6e430f11a9131fde87/screenshot/Screenshot%20(165).png)
 
-***8.	What is the average order value (AOV)?---
+***8.What is the average order value (AOV)?***
 ```sql
 SELECT 
     ROUND(AVG(total_amount), 2) AS average_order_value
