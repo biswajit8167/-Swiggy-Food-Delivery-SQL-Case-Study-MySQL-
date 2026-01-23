@@ -654,7 +654,7 @@ SELECT
 FROM restaurant_revenue
 ORDER BY city, revenue_rank_in_city;
 ```
-![image]()
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/6bf5a4de4d7728b1750b4d2bd1f5a3b7b3dacdc0/screenshot/Screenshot%20(189).png)
 
 ## 📊 Power BI Dashboards
 
