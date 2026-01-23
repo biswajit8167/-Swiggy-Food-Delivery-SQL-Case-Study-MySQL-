@@ -85,7 +85,7 @@ FROM orders
 GROUP BY order_id
 HAVING COUNT(*) > 1;
 ```
-*** There are no duplicates value in oredr table***
+***There are no duplicates value in oredr table***
 ### 2️⃣ Core Business KPIs
 
 * Total orders & revenue
