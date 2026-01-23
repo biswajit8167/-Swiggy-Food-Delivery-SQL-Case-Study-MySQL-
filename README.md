@@ -551,7 +551,7 @@ JOIN riders r
 WHERE total_deliveries >= 10   -- avoid noise
 ORDER BY late_delivery_rate_pct DESC;
 ```
-![image]()
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/d214b94fc3dfec5368757619b31b631e86511d7f/screenshot/Screenshot%20(185).png)
 
 ### 5️⃣ Customer Behavior & Retention
 
