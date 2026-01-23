@@ -492,7 +492,7 @@ WHERE d.delivery_status = 'Delivered'
 GROUP BY r.rider_id, r.rider_name
 ORDER BY total_deliveries DESC;
 ```
-![image]()
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/5148919d4dc4bc6eb357ae0a8b55530f1264b82e/screenshot/Screenshot%20(183).png)
 
 ### 5️⃣ Customer Behavior & Retention
 
