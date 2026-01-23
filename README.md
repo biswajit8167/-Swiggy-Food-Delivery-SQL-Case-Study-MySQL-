@@ -150,6 +150,23 @@ ORDER BY total_orders DESC;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/fd7f3b1122c2bf08fed32d5ccaf8b215847b5aed/screenshot/Screenshot%20(163).png)
 
+***16.Which are the top 10 restaurants by revenue?***
+```sql
+SELECT TOP 10
+    r.restaurant_id,
+    r.restaurant_name,
+    SUM(o.total_amount) AS total_revenue,
+    COUNT(o.order_id) AS total_orders
+FROM orders o
+JOIN restaurants r
+    ON o.restaurant_id = r.restaurant_id
+WHERE o.order_status = 'Completed'
+GROUP BY r.restaurant_id, r.restaurant_name
+ORDER BY total_revenue DESC;
+```
+
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/3515beaba6004ef6388e9f2bb1886efb18cf16b9/screenshot/Screenshot%20(174).png)
+
 
 ### 2️⃣ Core Business KPIs
 
