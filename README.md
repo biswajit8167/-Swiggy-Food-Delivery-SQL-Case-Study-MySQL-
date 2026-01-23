@@ -152,6 +152,9 @@ ORDER BY total_orders DESC;
 
 
 ### 2️⃣ Core Business KPIs
+
+### 📦 Orders & Revenue
+
 ***6.	What is the total number of orders completed?***
 ```sql
 SELECT 
