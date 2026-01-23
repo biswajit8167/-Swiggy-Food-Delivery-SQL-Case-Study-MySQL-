@@ -460,6 +460,24 @@ WHERE d.delivery_status = 'Delivered'
 ```  
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/54e8c4e5c13b056c091aff948b7b1ca6e6fd5612/screenshot/Screenshot%20(181).png)
 
+***25.What percentage of orders are delivered late (e.g., >45 mins)?***
+```sql
+WITH delivery_times AS (
+    SELECT 
+        o.order_id,
+        DATEDIFF(MINUTE, o.order_time, d.delivery_time) AS delivery_minutes
+    FROM deliveries d
+    JOIN orders o
+        ON d.order_id = o.order_id
+    WHERE d.delivery_status = 'Delivered'
+      AND d.delivery_time > o.order_time  
+)
+SELECT 
+    COUNT(CASE WHEN delivery_minutes > 45 THEN 1 END) * 100.0 / COUNT(*) 
+        AS late_delivery_percentage
+FROM delivery_times;
+```
+![image]()
 
 ### 5️⃣ Customer Behavior & Retention
 
