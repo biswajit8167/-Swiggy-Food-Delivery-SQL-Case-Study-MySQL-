@@ -179,6 +179,17 @@ WHERE order_status = 'Completed';
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/820d419156f68e2e335fc7c4c623c6b3b42c8db5/screenshot/Screenshot%20(166).png)
 
+***9.What is the daily revenue trend?***
+```sql
+SELECT 
+    CAST(order_date AS DATE) AS order_day,
+    SUM(total_amount) AS daily_revenue,
+    COUNT(*) AS total_orders
+FROM orders
+WHERE order_status = 'Completed'
+GROUP BY CAST(order_date AS DATE)
+ORDER BY daily_revenue desc;
+```
 ### 3️⃣ Restaurant Performance Analysis
 
 * Top & bottom restaurants by revenue
