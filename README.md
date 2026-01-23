@@ -243,7 +243,7 @@ WHERE o.order_status = 'Completed'
 GROUP BY o.customer_id, c.customer_name
 ORDER BY total_spend DESC;
 ```
-![image]()
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/8685c8c97b24dc04b459f8f00c4e700e10bc9b0c/screenshot/Screenshot%20(171).png)
 
 ### 3️⃣ Restaurant Performance Analysis
 
