@@ -86,6 +86,8 @@ GROUP BY order_id
 HAVING COUNT(*) > 1;
 ```
 ***There are no duplicates value in order table***
+
+
 ***4.Which columns contain NULL values and how many?***
 ```sql
 SELECT 
