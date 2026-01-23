@@ -64,6 +64,7 @@ SELECT 'riders' AS table_name, COUNT(*) AS total_records FROM riders
 UNION ALL
 SELECT 'deliveries' AS table_name, COUNT(*) AS total_records FROM deliveries;
 ```
+![image]
 
 ### 2️⃣ Core Business KPIs
 
