@@ -152,12 +152,14 @@ ORDER BY total_orders DESC;
 
 
 ### 2️⃣ Core Business KPIs
-
-* Total orders & revenue
-* Average Order Value (AOV)
-* Daily & monthly revenue trends
-* Repeat customer percentage
-* New customer acquisition trend
+***6.	What is the total number of orders completed?***
+```sql
+SELECT 
+    COUNT(*) AS total_completed_orders
+FROM orders
+WHERE order_status = 'Completed';
+```
+![image]
 
 ### 3️⃣ Restaurant Performance Analysis
 
