@@ -192,6 +192,18 @@ ORDER BY daily_revenue desc;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/84ae02fefa93089ab0f2f5239c6aead3444c1cb9/screenshot/Screenshot%20(167).png)
 
+***10.	What is the monthly revenue trend?***
+```sql
+SELECT 
+    FORMAT(order_date, 'yyyy-MM') AS order_month,
+    SUM(total_amount) AS monthly_revenue,
+    COUNT(*) AS total_orders
+FROM orders
+WHERE order_status = 'Completed'
+GROUP BY FORMAT(order_date, 'yyyy-MM')
+ORDER BY order_month;
+```
+![image]()
 ### 3️⃣ Restaurant Performance Analysis
 
 * Top & bottom restaurants by revenue
