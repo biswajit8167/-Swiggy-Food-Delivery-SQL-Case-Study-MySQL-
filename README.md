@@ -89,6 +89,7 @@ HAVING COUNT(*) > 1;
 
 
 ***4.Which columns contain NULL values and how many?***
+***For orders***
 ```sql
 SELECT 
     SUM(CASE WHEN order_id IS NULL THEN 1 ELSE 0 END) AS order_id_nulls,
@@ -101,7 +102,7 @@ SELECT
 FROM orders;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/7ca5c4a24501a9d858b0df93c61f39301ea22f9c/screenshot/Screenshot%20(159).png)
-
+***For customers***
 ```sql
 SELECT 
     SUM(CASE WHEN customer_id IS NULL THEN 1 ELSE 0 END) AS customer_id_nulls,
@@ -112,6 +113,15 @@ SELECT
 FROM customers;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/03c3eb1b666e627748ab9f8a86c77206570ee7cf/screenshot/Screenshot%20(160).png)
+***For Restaurants***
+```sql
+SELECT 
+    SUM(CASE WHEN restaurant_id IS NULL THEN 1 ELSE 0 END) AS restaurant_id_nulls,
+    SUM(CASE WHEN restaurant_name IS NULL THEN 1 ELSE 0 END) AS restaurant_name_nulls,
+    SUM(CASE WHEN city IS NULL THEN 1 ELSE 0 END) AS city_nulls,
+     SUM(CASE WHEN opening_hours IS NULL THEN 1 ELSE 0 END) AS opening_hours_nulls
+FROM restaurants;
+```
 ### 2️⃣ Core Business KPIs
 
 * Total orders & revenue
