@@ -444,10 +444,22 @@ ORDER BY avg_delivery_time_minutes;
 
 ### 4️⃣ Delivery & Rider Performance
 
-* Average delivery time
-* Late delivery rate
-* Rider utilization & efficiency
-* City-wise delivery performance
+***23.What is the average delivery time overall?***
+
+```sql
+SELECT 
+    ROUND(
+        AVG(DATEDIFF(MINUTE, o.order_time, d.delivery_time)),
+        2
+    ) AS avg_delivery_time_minutes
+FROM deliveries d
+JOIN orders o
+    ON d.order_id = o.order_id
+WHERE d.delivery_status = 'Delivered'
+  AND d.delivery_time > o.order_time;
+```  
+![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/54e8c4e5c13b056c091aff948b7b1ca6e6fd5612/screenshot/Screenshot%20(181).png)
+
 
 ### 5️⃣ Customer Behavior & Retention
 
