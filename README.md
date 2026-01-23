@@ -494,6 +494,32 @@ ORDER BY total_deliveries DESC;
 ```
 ![image](https://github.com/biswajit8167/-Swiggy-Food-Delivery-SQL-Case-Study-MySQL-/blob/5148919d4dc4bc6eb357ae0a8b55530f1264b82e/screenshot/Screenshot%20(183).png)
 
+***27.What is the average number of orders handled per rider per day?***
+```sql
+WITH daily_rider_orders AS (
+    SELECT 
+        d.rider_id,
+        o.order_date,
+        COUNT(d.delivery_id) AS orders_per_day
+    FROM deliveries d
+    JOIN orders o
+        ON d.order_id = o.order_id
+    WHERE d.delivery_status = 'Delivered'
+    GROUP BY d.rider_id, o.order_date
+)
+SELECT 
+    r.rider_id,
+    r.rider_name,
+    ROUND(AVG(orders_per_day), 2) AS avg_orders_per_day
+FROM daily_rider_orders dro
+JOIN riders r
+    ON dro.rider_id = r.rider_id
+GROUP BY r.rider_id, r.rider_name
+ORDER BY avg_orders_per_day DESC;
+```
+![image]()
+
+
 ### 5️⃣ Customer Behavior & Retention
 
 * Peak ordering hours
